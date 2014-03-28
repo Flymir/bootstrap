@@ -31,7 +31,7 @@ set ( DISTS
 configure_file ( config.in ${CMAKE_CURRENT_BINARY_DIR}/config.cmake )
 
 macro ( install_dist _REPO _DIST )
-  set ( _DIST_SOURCE GIT_REPOSITORY ${_REPO}${_DIST}.git GIT_TAG master )
+  set ( _DIST_SOURCE GIT_REPOSITORY ${_REPO}/${_DIST}.git GIT_TAG master )
 
   # Build project using the generated settings in cache
   ExternalProject_Add( ${_DIST}
@@ -48,9 +48,9 @@ endmacro ()
 
 # Build all modules one after another
 foreach ( DIST ${DISTS} )
-  install_dist ( http://github.com/LuaDist/ ${DIST} )
+  install_dist ( http://github.com/LuaDist ${DIST} )
 endforeach ()
-install_dist ( http://github.com/Flymir/ luadist-git )
+install_dist ( http://github.com/Flymir luadist-git )
 
 # Make a fake target
 add_custom_target ( install
