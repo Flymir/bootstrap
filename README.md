@@ -4,7 +4,7 @@ This repository contains an installation script that will bootstrap a self conta
 
 Checking out of git and run:
 
-    git clone git://github.com/LuaDist/bootstrap.git
+    git clone git://github.com/Flymir/bootstrap.git
 	cd bootstrap
     ./bootstrap
    
